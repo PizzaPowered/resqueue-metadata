@@ -1,5 +1,4 @@
-module Resqueue
-  module Metadata
-    # Your code goes here...
-  end
-end
+require "resque"
+require "redis/hash_key"
+
+require "resqueue-metadata/metadata"
