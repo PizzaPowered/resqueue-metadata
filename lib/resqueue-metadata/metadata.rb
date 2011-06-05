@@ -3,6 +3,10 @@ module Resque
     class Metadata
       attr_reader :queue_name
 
+      def self.metadata_key queue_name
+        "metadata:#{queue_name}"
+      end
+
       def initialize queue_name
         self.queue_name = queue_name
       end
@@ -36,7 +40,7 @@ module Resque
       end
 
       def metadata_key
-        "metadata:#{queue_name}"
+        self.class.metadata_key queue_name
       end
 
     end
